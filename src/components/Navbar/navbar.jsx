@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [show, setShow] = useState(false);
 
@@ -17,6 +19,12 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigate("/");
+  };
   return (
     <div className={`navbar ${show && "navbar--black"}`}>
       <img
@@ -31,7 +39,7 @@ function Navbar() {
         <li>Movies</li>
         <li>New & Popular</li>
         <li>
-          <button className="logout-btn">Logout</button>
+          <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </li>
 
       </ul>

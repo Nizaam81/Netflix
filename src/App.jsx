@@ -5,46 +5,57 @@ import HomePage from "./components/homePage/homePage";
 import Navbar from "./components/Navbar/navbar";
 import Footer from "./components/Footer/footer";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
-import NetflixPlayer from "../src/components/NetflixPlayer/NetflixPlayer";
-
+import NetflixPlayer from "./components/NetflixPlayer/NetflixPlayer";
+import ProtectedRoute from "../src/components/ProtectedRoute";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={
-        
-        <>
-          <Login />
-          <Footer/>
-        </>} />
+      {/* PUBLIC */}
+      <Route
+        path="/"
+        element={
+          <>
+            <Login />
+            <Footer />
+          </>
+        }
+      />
 
+      {/* PROTECTED */}
       <Route
         path="/home"
         element={
-          <>
-            
-            <Navbar />
-            <HomePage />
-            <Footer />
-          </>
+          <ProtectedRoute>
+            <>
+              <Navbar />
+              <HomePage />
+              <Footer />
+            </>
+          </ProtectedRoute>
         }
       />
 
       <Route
         path="/movie/:id"
         element={
-          <>
-            <Navbar />
-            <MovieDetails />
-            <Footer />
-          </>
+          <ProtectedRoute>
+            <>
+              <Navbar />
+              <MovieDetails />
+              <Footer />
+            </>
+          </ProtectedRoute>
         }
       />
 
-     
       <Route
         path="/watch/:id"
-        element={<NetflixPlayer />}
+        element={
+          <ProtectedRoute>
+            <NetflixPlayer />
+          </ProtectedRoute>
+        }
       />
     </Routes>
   );
