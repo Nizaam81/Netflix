@@ -1,0 +1,65 @@
+.row {
+    margin-left: 20px;
+    color: white;
+}
+
+.row h2 {
+    margin-left: 10px;
+}
+
+.row__wrapper {
+    position: relative;
+}
+
+.row__posters {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.row__posters::-webkit-scrollbar {
+    display: none;
+}
+
+.row__poster {
+    max-height: 170px;
+    object-fit: contain;
+    margin-right: 10px;
+    transition: transform 0.3s;
+    border-radius: 6px;
+}
+
+.row__poster:hover {
+    transform: scale(1.08);
+}
+
+/* ARROW BUTTONS */
+.row__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.row__wrapper:hover .row__arrow {
+    opacity: 1;
+}
+
+.row__arrow.left {
+    left: 5px;
+}
+
+.row__arrow.right {
+    right: 5px;
+}

@@ -1,0 +1,32 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 68px;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+    transition: background-color 0.4s ease-in;
+}
+
+.navbar--black {
+    background-color: #111;
+}
+
+/* LOGO */
+.navbar__logo {
+    width: 92px;
+    cursor: pointer;
+}
+
+/* LINKS */
+.navbar__links {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    color: white;
+    }

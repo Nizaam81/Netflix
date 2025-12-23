@@ -1,0 +1,76 @@
+.home {
+    background-color: #111;
+    min-height: 100vh;
+}
+
+/* HERO BANNER */
+.banner {
+    position: relative;
+    height: 85vh;
+    color: white;
+    background-size: cover;
+    background-position: center center;
+    background-image: url("https://wallpapercave.com/wp/wp1917154.jpg");
+    /* Stranger Things */
+}
+
+.banner__contents {
+    margin-left: 40px;
+    padding-top: 140px;
+    max-width: 600px;
+}
+
+.banner__title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.banner__description {
+    width: 100%;
+    line-height: 1.4;
+    font-size: 1rem;
+    max-width: 480px;
+    margin-top: 20px;
+}
+
+/* BUTTONS */
+.banner__buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.banner__button {
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.banner__button.play {
+    background-color: #fff;
+    color: #000;
+}
+
+.banner__button.info {
+    background-color: rgba(109, 109, 110, 0.7);
+}
+
+.banner__button:hover {
+    opacity: 0.85;
+}
+
+/* BOTTOM FADE */
+.banner--fadeBottom {
+    position: absolute;
+    bottom: 0;
+    height: 7.4rem;
+    width: 100%;
+    background-image: linear-gradient(180deg,
+            transparent,
+            rgba(37, 37, 37, 0.61),
+            #111);
+}

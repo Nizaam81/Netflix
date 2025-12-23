@@ -1,0 +1,245 @@
+/* =======================
+   RESET
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    background: #000;
+}
+
+/* =======================
+   LOGIN PAGE
+======================= */
+.login {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-image: "../assets/b42f7780-0fe1-11eb-8460-e459acd20fb4.jpg";
+}
+
+/* BACKGROUND IMAGE (blurred + zoomed) */
+.login::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background: url("../assets/b42f7780-0fe1-11eb-8460-e459acd20fb4.jpg") center center / cover no-repeat;
+    transform: scale(1.05);
+    z-index: 0;
+}
+
+/* DARK OVERLAY */
+.login::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+.login__background {
+    position: relative;
+    min-height: 100vh;
+    z-index: 2;
+}
+
+/* =======================
+   LOGO
+======================= */
+.login__logo {
+    position: fixed;
+    /* 🔥 KEY CHANGE */
+    top: 20px;
+    left: 40px;
+    width: 110px;
+    z-index: 999;
+}
+
+/* =======================
+   LOGIN CARD
+======================= */
+.login__container {
+    max-width: 420px;
+    margin: 90px auto 0;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 60px 68px 40px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* TITLE */
+.login__container h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+/* =======================
+   INPUTS
+======================= */
+.login__container input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.login__container input::placeholder {
+    color: #8c8c8c;
+}
+
+/* Input focus (Netflix style) */
+.login__container input:focus {
+    background: #454545;
+    border-bottom: 2px solid #e50914;
+}
+
+/* =======================
+   ERROR MESSAGE
+======================= */
+.login__error {
+    color: #e87c03;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+/* =======================
+   SIGN IN BUTTON
+======================= */
+.login__container button {
+    width: 100%;
+    height: 48px;
+    margin-top: 8px;
+    background: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login__container button:hover {
+    background: #f6121d;
+}
+
+.login__container button:disabled {
+    background: #b20710;
+    cursor: not-allowed;
+}
+
+/* =======================
+   OPTIONS (REMEMBER / FORGOT)
+======================= */
+.login__options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #b3b3b3;
+}
+
+.login__options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login__options input {
+    width: 16px;
+    height: 16px;
+}
+
+.login__options .help {
+    cursor: pointer;
+}
+
+.login__options .help:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   SIGNUP TEXT
+======================= */
+.signup {
+    margin-top: 16px;
+    font-size: 16px;
+    color: #737373;
+}
+
+.signup span {
+    color: #fff;
+    cursor: pointer;
+}
+
+.signup span:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   CAPTCHA TEXT
+======================= */
+.login__container small {
+    display: block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #8c8c8c;
+    line-height: 1.4;
+}
+
+.login__container small span {
+    color: #0071eb;
+    cursor: pointer;
+}
+
+.login__container small span:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   LOGOUT BUTTON (NETFLIX THEME)
+======================= */
+.logout-btn {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #f6121d;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 740px) {
+    .login__container {
+        padding: 40px 28px;
+        margin-top: 70px;
+    }
+
+    .login__logo {
+        width: 120px;
+        left: 20px;
+    }
+}
